@@ -1,0 +1,33 @@
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <div ngModelGroup="contact" #contact="ngModelGroup">
+    <div class="form-group">
+    <label for="contact">Contact no:</label>
+    <input required ngModel type="text" name="contactNo"  #cNo="ngModel" class="form-control" id="contactNo" >
+    <div class="alert alert-danger" *ngIf="contact.touched && !contact.valid">Contact is required.</div>
+  </div>
+  </div>
+  <div class="form-group">
+    <label for="email">Email address:</label>
+    <input required ngModel type="email" name="email"  #emailId="ngModel" (change)="log(emailId)" class="form-control" id="email" >
+    <div class="alert alert-danger" *ngIf="emailId.touched && !emailId.valid">Email is required.</div>
+  </div>
+  <div class="form-group">
+    <label for="pwd">Password:</label>
+     <div>Specific Validation Errors</div>
+    <input type="password" 
+           required 
+           minlength="2" 
+           maxlength="8"
+           pattern="rajat" 
+           class="form-control" id="pwd" ngModel name="pwd" #password="ngModel" 
+           (change)="checkLog(password)"
+           >
+    <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
+      <div *ngIf="password.errors.required">Password is required</div>
+      <div *ngIf="password.errors.minlength">Password should be minimum of {{password.errors.minlength.requiredLength}} characters</div>
+      <div *ngIf="password.errors.pattern">Password doesn't match with pattern.</div>
+  </div>
+    
+  </div>
+  <button type="submit" [disabled] ="!f.valid" class="btn btn-primary">Submit</button>
+</form>

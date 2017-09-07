@@ -1,0 +1,13 @@
+<div class="like-component">
+  <div>
+  <ng-content select=".post-content"></ng-content>
+  </div>
+  <div>
+  <span class="glyphicon"
+        [class.glyphicon-heart-empty]="!isSelected"
+        [class.glyphicon-heart]="isSelected" 
+        (click)='onClick()'>
+   </span>
+  <span class="likes-count">{{count}}</span>
+  </div>
+</div>
