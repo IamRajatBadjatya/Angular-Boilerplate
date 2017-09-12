@@ -1,0 +1,28 @@
+<form [formGroup]="form">
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input formControlName="username" autocomplete="off" id="username" type="text" class="form-control">
+        <div *ngIf="username.pending">Checking for uniqueness...</div>
+        <div class="alert alert-danger" 
+        *ngIf="username.touched && username.invalid">
+        <div *ngIf="username.errors.required">This field is required.</div>
+        <div *ngIf="username.errors.minlength">minimum length should be of {{username.errors.minlength.requiredLength}} characters.</div>
+        <!--Custom Validator Fn -->
+        <div *ngIf="username.errors.cantContainSpace">space is not allowed.</div>
+        <!--Async Custom Validator Fn -->
+        <div *ngIf="username.errors.checkUserName">Username is already taken.</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input formControlName="password" id="password" type="text" class="form-control">
+         <div class="alert alert-danger" 
+        *ngIf="password.touched && password.invalid">
+        <div *ngIf="password.errors.required">This field is required.</div>
+        <div *ngIf="password.errors.minlength">minimum length should be of {{password.errors.minlength.requiredLength}} characters.</div>
+        </div>
+
+    </div>
+    <button class="btn btn-primary" type="submit">Sign Up</button>
+    {{form.value | json}}
+</form>          

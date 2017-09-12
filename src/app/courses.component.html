@@ -84,36 +84,49 @@
         <li [class.active]="viewMode=='map'" (click)="changeTab()"><a>Map View</a></li>
         <li [class.active]="viewMode=='list'" (click)="changeTab()"><a>List View</a></li>
     </ul>
-    <div [ngSwitch] = "viewMode">
-        <div *ngSwitchCase ="'map'">Map View</div>
-        <div *ngSwitchCase ="'list'">List View</div>
+    <div [ngSwitch]="viewMode">
+        <div *ngSwitchCase="'map'">Map View</div>
+        <div *ngSwitchCase="'list'">List View</div>
         <div *ngSwitchDefault>Other Wise</div>
     </div>
 </section>
 <section>
     <h3>ngFor and Change Detection</h3>
-     <button (click)="addItem()">Add Item</button>
-     <button (click)="reload()">Reload</button>
-        <ul>
-            <li *ngFor="let item of items;index as i;trackBy:checkById">{{i}}-{{item.price}}
+    <button (click)="addItem()">Add Item</button>
+    <button (click)="reload()">Reload</button>
+    <ul>
+        <li *ngFor="let item of items;index as i;trackBy:checkById">{{i}}-{{item.price}}
             <button class="remove" (click)="removeItem(item)">Remove</button>
-            </li>
-        </ul>   
+        </li>
+    </ul>
 </section>
- <section>
-       <h4>ngClass && ngStyle</h4>
-       <div [ngClass]="{ orange:isSelected, black:!isSelected}">ngClass</div>
-       <div [ngStyle]="{ color:'Green',fontWeight:'bold'}">ngStyle <em>Style properties shourld be in camelCase</em></div>
-   </section>
-   <section>
-        <h4>Safe Traversal Operator</h4>
-        <div>{{task.assignee?.name}}</div>
-   </section>
-   <section>
-        <h4>Custom Directives</h4>
-        <input type="text" [appInputFormat] ="'uppercase'" >
-   </section>
-   <section>
-        <h4>Template Driven Form</h4>
-        <app-form></app-form>
-   </section>
+<section>
+    <h4>ngClass && ngStyle</h4>
+    <div [ngClass]="{ orange:isSelected, black:!isSelected}">ngClass</div>
+    <div [ngStyle]="{ color:'Green',fontWeight:'bold'}">ngStyle <em>Style properties shourld be in camelCase</em></div>
+</section>
+<section>
+    <h4>Safe Traversal Operator</h4>
+    <div>{{task.assignee?.name}}</div>
+</section>
+<section>
+    <h4>Custom Directives</h4>
+    <input type="text" [appInputFormat]="'uppercase'">
+</section>
+<section>
+    <h4>Template Driven Form</h4>
+    <app-form></app-form>
+    signup-form
+</section>
+<section>
+    <h4>Reactive Form</h4>
+    <signup-form></signup-form>
+</section>
+<section>
+    <h4>Form Array Control Implementation</h4>
+    <form-array></form-array>
+</section>
+<section>
+    <h4>Reactive Form Assignment</h4>
+    <reacitve-form-assignment></reacitve-form-assignment>
+</section>
