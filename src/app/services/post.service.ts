@@ -8,4 +8,7 @@ export class PostService {
   getPosts(){
     return this.http.get(this.url);
   }
+  createPost(post){
+    return this.http.post(this.url,post);
+  }
 }

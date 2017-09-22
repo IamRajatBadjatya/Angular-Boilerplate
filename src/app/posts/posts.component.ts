@@ -17,5 +17,14 @@ export class PostsComponent implements OnInit {
       this.posts = response.json();
     });
   }
+  createPost(input : HTMLInputElement){
+    let post = {
+      userId: 1,
+      title: input.value
+    }
+    this.service.createPost(post).subscribe(response => {
+      console.log("post added successfully",response);
+    })
+  }
 
 }
