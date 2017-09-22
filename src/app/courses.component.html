@@ -101,32 +101,36 @@
     </ul>
 </section>
 <section>
-    <h4>ngClass && ngStyle</h4>
+    <h3>ngClass && ngStyle</h3>
     <div [ngClass]="{ orange:isSelected, black:!isSelected}">ngClass</div>
     <div [ngStyle]="{ color:'Green',fontWeight:'bold'}">ngStyle <em>Style properties shourld be in camelCase</em></div>
 </section>
 <section>
-    <h4>Safe Traversal Operator</h4>
+    <h3>Safe Traversal Operator</h3>
     <div>{{task.assignee?.name}}</div>
 </section>
 <section>
-    <h4>Custom Directives</h4>
+    <h3>Custom Directives</h3>
     <input type="text" [appInputFormat]="'uppercase'">
 </section>
 <section>
-    <h4>Template Driven Form</h4>
+    <h3>Template Driven Form</h3>
     <app-form></app-form>
     signup-form
 </section>
 <section>
-    <h4>Reactive Form</h4>
+    <h3>Reactive Form</h3>
     <signup-form></signup-form>
 </section>
 <section>
-    <h4>Form Array Control Implementation</h4>
+    <h3>Form Array Control Implementation</h3>
     <form-array></form-array>
 </section>
 <section>
-    <h4>Reactive Form Assignment</h4>
+    <h3>Reactive Form Assignment</h3>
     <reacitve-form-assignment></reacitve-form-assignment>
+</section>
+<section>
+    <h3>Service Integration</h3>
+    <posts></posts>
 </section>

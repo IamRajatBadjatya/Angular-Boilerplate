@@ -13,17 +13,20 @@ import { LikeComponentComponent } from './like-component/like-component.componen
 import { InputFormatDirective } from './input-format.directive';
 import { FormArrayComponent } from './form-array/form-array.component';
 import { ReacitveFormAssignmentComponent } from './reacitve-form-assignment/reacitve-form-assignment.component';
+import { PostsComponent } from './posts/posts.component';
+import {HttpModule} from '@angular/http';
+import { PostService } from './services/post.service';
 @NgModule({
   declarations: [
     AppComponent,CoursesComponent,CustomPipe, FavoriteComponent, BootstrapPanelComponent,
-     LikeComponentComponent, InputFormatDirective, SignupFormComponent, FormArrayComponent, ReacitveFormAssignmentComponent
+     LikeComponentComponent, InputFormatDirective, SignupFormComponent, FormArrayComponent, ReacitveFormAssignmentComponent, PostsComponent
   ],
   imports: [
-    BrowserModule,FormsModule,FormValidationModule, ReactiveFormsModule
+    BrowserModule,FormsModule,FormValidationModule, ReactiveFormsModule,HttpModule
 
 
   ],
-  providers: [TestService],
+  providers: [TestService,PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
